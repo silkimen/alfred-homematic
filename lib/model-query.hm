@@ -1,0 +1,22 @@
+string sFavoriteId;
+foreach (sFavoriteId, dom.GetObject(ID_FAVORITES).EnumUsedIDs()) {
+  object oFavorite = dom.GetObject(sFavoriteId);
+  if (oFavorite.Name().Substr(0,5) == '_USER') {
+    string favId;
+    foreach(favId, oFavorite.EnumUsedIDs()) {
+      object fav = dom.GetObject(favId);
+      string chId;
+      WriteLine("group:" + fav.Name());
+      foreach (chId, fav.EnumUsedIDs()) {
+        object chObj = dom.GetObject(chId);
+    	  string sIfaceId = chObj.Interface();
+        string sIface = dom.GetObject(sIfaceId).Name();
+        WriteLine("device:" + chObj.Name());
+        WriteLine("interface:" + sIface);
+    	  WriteLine("address:" + chObj.Address());
+        WriteLine("type:" + chObj.HssType());
+    	  WriteLine("state:" + chObj.State().ToString());
+      }
+    }
+  }
+}
