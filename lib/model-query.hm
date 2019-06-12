@@ -15,7 +15,6 @@ foreach (sFavoriteId, dom.GetObject(ID_FAVORITES).EnumUsedIDs()) {
         WriteLine("interface:" + sIface);
     	  WriteLine("address:" + chObj.Address());
         WriteLine("type:" + chObj.HssType());
-    	  WriteLine("state:" + chObj.State().ToString());
       }
     }
   }

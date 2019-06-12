@@ -6,5 +6,5 @@
   * connection settings
   * cache time
   * language
-* add device icons
+  * dark / light theme
 * show current state
